@@ -13,6 +13,13 @@ Install the necessary ruby gems using command:
   gem install freeclimb
   gem install sinatra
 ```
+To install freeclimb from source:
+```bash
+  cd <ruby sdk directory>
+  gem build freeclimb.gemspec
+  gem install ./freeclimb-<version number>.gem
+```
+Note that if the gem is aleady built, trying to build the gem inside the ruby sdk directory will produce errors. Delete the gem file and rebuild.
 
 ## Running the Tutorial
 Start the ruby server
