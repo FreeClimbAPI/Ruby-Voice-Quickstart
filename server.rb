@@ -3,8 +3,7 @@ require 'freeclimb'
 require 'json'
 
 post '/voice' do
-  say = Percl::Say.new('Hello, World!')
-  script = Percl::Script.new
-  script.add(say)
-  script.to_json
+  say = Freeclimb::Say.new(text:'Hello, World!')
+  script = Freeclimb::PerclScript.new(commands:[say])
+  Freeclimb::percl_to_json(script)
 end
