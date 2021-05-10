@@ -19,7 +19,7 @@ To install freeclimb from source:
   gem build freeclimb.gemspec
   gem install ./freeclimb-<version number>.gem
 ```
-Note that if the gem is aleady built, trying to build the gem inside the ruby sdk directory will produce errors. Delete the gem file and rebuild.
+Note that if the gem is already built, trying to build the gem inside the ruby sdk directory will produce errors. Delete the gem file and rebuild.
 
 ## Running the Tutorial
 Start the ruby server
