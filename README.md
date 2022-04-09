@@ -10,8 +10,7 @@ This project serves as a guide to help you build an application with the FreeCli
 Install the necessary ruby gems using command:
 
 ```bash
-  gem install freeclimb
-  gem install sinatra
+  bundle install
 ```
 To install freeclimb from source:
 ```bash
@@ -22,10 +21,12 @@ To install freeclimb from source:
 Note that if the gem is aleady built, trying to build the gem inside the ruby sdk directory will produce errors. Delete the gem file and rebuild.
 
 ## Running the Tutorial
-Start the ruby server
+Start the ruby server.
+
+You can optionally set the `PORT` environment variable in this example (defaults to `3000`)
 
 ```bash
-  ruby server.rb
+  PORT=3000 bundle exec rake start
 ```
 
 ## Getting Help
