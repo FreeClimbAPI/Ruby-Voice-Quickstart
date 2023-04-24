@@ -1,34 +1,62 @@
-# Ruby - Getting Started Tutorial
-This project serves as a guide to help you build an application with the FreeClimb ruby SDK. This project will: 
+# Ruby Voice Quickstart
 
-- Accept an incoming call and respond with a PerCL command
+This quickstart serves as a guide to get your first Voice application up and running with [FreeClimb](https://docs.freeclimb.com/docs/how-freeclimb-works).
 
-## Setting up your new app within your FreeClimb account
-- To get started using a FreeClimb account, follow the instructions [here](https://docs.freeclimb.com/docs/getting-started-with-freeclimb).
+Specifically, the project will:
 
-## Setting up the Tutorial
-Install the necessary ruby gems using command:
+- Receive an incoming call via a FreeClimb application
+- Respond with a [PerCL](https://docs.freeclimb.com/reference/percl-overview) command to say 'Hello World!' to caller
 
-```bash
-  bundle install
-```
-To install freeclimb from source:
-```bash
-  cd <ruby sdk directory>
-  gem build freeclimb.gemspec
-  gem install ./freeclimb-<version number>.gem
-```
-Note that if the gem is aleady built, trying to build the gem inside the ruby sdk directory will produce errors. Delete the gem file and rebuild.
+## Tutorial
 
-## Running the Tutorial
-Start the ruby server.
+We offer a [Ruby Voice Quickstart Tutorial](https://docs.freeclimb.com/docs/ruby-voice-calling-quickstart) for more detailed set-up instructions and explanation of how FreeClimb works.
 
-You can optionally set the `PORT` environment variable in this example (defaults to `3000`)
+## Requirements
 
-```bash
-  PORT=3000 bundle exec rake start
-```
+- A [FreeClimb account](https://www.freeclimb.com/dashboard/signup/)
 
-## Getting Help
+- A [registered application](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#register-an-app) with a named alias
 
-If you are experiencing difficulties, [contact support](https://freeclimb.com/support).
+- A [configured FreeClimb number](https://docs.freeclimb.com/docs/getting-and-configuring-a-freeclimb-number) assigned to your application
+
+- Trial accounts: a [verified number](https://docs.freeclimb.com/docs/using-your-trial-account#verifying-outbound-numbers)
+
+## Tools:
+
+- [Ruby](https://www.ruby-lang.org/en/downloads/)
+- [ngrok](https://ngrok.com/download) (recommended for hosting)
+
+## Setting up the Quickstart
+
+1. Install the required packages
+
+   ```bash
+   bundle install
+   ```
+
+2. Configure environment variables:
+
+   | ENV VARIABLE | DESCRIPTION                                                                                                                            |
+   | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+   | ACCOUNT_ID   | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in dashboard. |
+   | API_KEY      | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in dashboard.    |
+
+3. [Configure your applications's endpoints](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#configure-your-application) by adding a publicly accessible URL (we recommend an [ngrok](https://ngrok.com/download) URL) and the route reference `/incomingCall` to your App Config's VoiceURL:
+
+   ```bash
+   https://YOUR-URL.ngrok.io/incomingCall
+   ```
+
+## Running the Quickstart
+
+1. Start your voice quickstart application
+
+   ```bash
+   bundle exec rake start
+   ```
+
+2. Call the FreeClimb number assigned to the application you've configured for this tutorial
+
+## Feedback & Issues
+
+If you would like to give the team feedback or you encounter a problem, please [contact support](https://www.freeclimb.com/support/) or [submit a ticket](https://freeclimb.com/dashboard/portal/support) in the dashboard.
