@@ -17,3 +17,15 @@ get '/incomingCall' do
   script = Freeclimb::PerclScript.new(commands:[say])
   script.to_json()
 end
+
+# Liveness probe endpoint
+get '/live' do
+  content_type :json
+  { status: 'live' }.to_json
+end
+
+# Readiness probe endpoint
+get '/ready' do
+  content_type :json
+  { status: 'ready' }.to_json
+end
